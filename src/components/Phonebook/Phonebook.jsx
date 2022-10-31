@@ -10,8 +10,6 @@ export const Phonebook = ({ onSubmitForm }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const numberContact = { name, number };
-
   const onChangeInput = e => {
     const { name, value } = e.currentTarget;
     switch (name) {
@@ -27,6 +25,7 @@ export const Phonebook = ({ onSubmitForm }) => {
   };
 
   const onSubmit = e => {
+    const numberContact = { name, number };
     e.preventDefault();
 
     onSubmitForm(numberContact);
